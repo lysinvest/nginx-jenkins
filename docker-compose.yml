@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+
+  nginx:
+    restart: always
+    build: .
+    image: frontend/proxy:1.0.0  
+    container_name: proxy    
+    ports:
+      - "80:80"
