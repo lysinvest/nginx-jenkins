@@ -1,5 +1,5 @@
 # main-nginx
-17/10/2017 12:03
+17/10/17 18:17
 
 # verifier que le port n'est pas utilisé par nginx
 sudo service nginx stop
