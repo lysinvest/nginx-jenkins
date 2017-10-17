@@ -1,11 +1,15 @@
 version: "3"
 
 services:
-
   nginx:
-    restart: always
-    build: .
-    image: frontend/proxy:1.0.0  
-    container_name: proxy    
+    build: ./
+    image : main-proxy:1.0.0
+    container_name: main-proxy
     ports:
       - "80:80"
+    networks:
+      - frontend
+    restart: always
+
+networks:
+  frontend:
