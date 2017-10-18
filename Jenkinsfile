@@ -1,13 +1,11 @@
-pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-                sh 'sudo cat /etc/hostname'
-                sh 'docker --version'
-                sh 'ls -a'
-            }
-        }
-    }
+node ('master') {
+  stage ('provision on master') {
+    sh 'cat /etc/hostname'
+  }
+}
+node ('registry') {
+  stage ('production on registry') {
+    sh 'cat /etc/hostname'
+    sh 'docker --version'
+  }
 }
