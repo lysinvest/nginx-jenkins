@@ -31,7 +31,7 @@ pipeline {
               doGenerateSubmoduleConfigurations: false, 
               extensions: [], 
               submoduleCfg: [], 
-              userRemoteConfigs: [[credentialsId: 'lysinvest', url: 'git@github.com:lysinvest/nginx-jenkins.git']]])
+              userRemoteConfigs: [[credentialsId: 'lysinvestssh', url: 'git@github.com:lysinvest/nginx-jenkins.git']]])
 
             }
         }
