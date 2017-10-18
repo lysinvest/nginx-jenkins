@@ -25,5 +25,28 @@ pipeline {
                 sh 'cat /etc/hostname'
             }
         }
+
+        stage('Automated Tests') {
+          parallel linux: {
+            node('master') {
+              echo 'aaaaaaaaaaaaaa - master'
+/*              checkout scm
+                try {
+                  unstash 'app'
+                  sh 'make check'
+                }
+                finally {
+                  junit '**/target/*.xml'
+                }*/
+            }
+          },
+          windows: {
+            node('registry') {
+              echo 'aaaaaaaaaaaaaa - registry'
+            }
+          }
+        }
+
+
     }
 }
