@@ -34,9 +34,10 @@ pipeline {
               userRemoteConfigs: [[credentialsId: 'lysinvestssh', url: 'git@github.com:lysinvest/nginx-jenkins.git']]])
 
               sh "ls -a"
-              sh "mkdir -p output"
-              writeFile file: "output/somefile", text: "Hey look, some text."
-              stash name: "first-stash", includes: "output/*"  
+/*              sh "mkdir -p output"
+              writeFile file: "output/somefile", text: "Hey look, some text."*/
+/*              stash name: "first-stash", includes: "output/*"  */
+/*              stash name: "first-stash", includes: "output/*"  */*/
 
             }
         }
@@ -48,7 +49,7 @@ pipeline {
             steps {
                 sh 'cat /etc/hostname'
                 sh "ls -a"
-                unstash "first-stash"
+/*                unstash "first-stash"*/
             }
         }
 
