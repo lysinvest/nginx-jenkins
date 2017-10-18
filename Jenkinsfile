@@ -27,7 +27,6 @@ pipeline {
               userRemoteConfigs: [[credentialsId: 'lysinvestssh', url: 'git@github.com:lysinvest/nginx-jenkins.git']]])
               sh "ls -a"
               sh "docker-compose down"
-              sh "docker rmi main-proxy:1.0.0"
               sh "docker-compose build"
             }
         }
