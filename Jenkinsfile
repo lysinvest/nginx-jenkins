@@ -1,5 +1,7 @@
+
+def app
+
 node ('registry') {    
-    def app
 
     stage('Clone repository') {
         checkout scm
@@ -15,6 +17,10 @@ node ('registry') {
         }
     }
 
+}
+
+node ('registry') {    
+
     stage('Push image') {
         try {
             sh "docker stop main-proxy:1.0.0"
@@ -23,10 +29,5 @@ node ('registry') {
             echo "no container to stop"
         }
         sh "docker-compose up -d"
-/*          docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {*/
-/*        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
-        }*/
     }
 }
