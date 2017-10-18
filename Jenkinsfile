@@ -18,9 +18,9 @@ pipeline {
         }
         stage('Example 2') {
 
-/*            agent { 
+            agent { 
                 label 'registry'
-            }*/
+            }
 
             steps {
 /*              node('registry') {*/
