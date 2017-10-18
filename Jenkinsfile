@@ -11,15 +11,5 @@ pipeline {
                 sh 'ls -a'
             }
         }
-        stage('Test with registry') {
-            agent { 
-                label 'registry'
-            }
-            steps {
-                sh 'sudo cat /etc/hostname'
-                sh 'docker --version'
-                sh 'ls -a'
-            }
-        }
     }
 }
