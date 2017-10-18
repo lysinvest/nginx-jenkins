@@ -3,16 +3,16 @@ pipeline {
 /*    parameters {
         string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
     }    */
-    environment { 
+/*    environment { 
         CC = 'clang'
-    }    
+    }    */
     stages {
         stage('compile Unit Test') {
             steps {
               node('master') {
 /*                sh 'printenv'*/
                 sh 'cat /etc/hostname'
-                echo "Running ${env.CC}"
+/*                echo "Running ${env.CC}"*/
               }
             }
         }
