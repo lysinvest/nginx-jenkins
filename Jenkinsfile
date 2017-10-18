@@ -32,7 +32,7 @@ pipeline {
         }
         stage("build2") {
             agent { 
-                label 'master'
+                label 'registry'
             }          
             steps {
                 sh 'cat /etc/hostname'
