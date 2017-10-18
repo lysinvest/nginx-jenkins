@@ -30,14 +30,6 @@ pipeline {
           parallel linux: {
             node('master') {
               echo 'aaaaaaaaaaaaaa - master'
-/*              checkout scm
-                try {
-                  unstash 'app'
-                  sh 'make check'
-                }
-                finally {
-                  junit '**/target/*.xml'
-                }*/
             }
           },
           windows: {
