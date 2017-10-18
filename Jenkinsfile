@@ -33,6 +33,10 @@ pipeline {
               submoduleCfg: [], 
               userRemoteConfigs: [[credentialsId: 'lysinvestssh', url: 'git@github.com:lysinvest/nginx-jenkins.git']]])
 
+              sh "mkdir -p output"
+              writeFile file: "output/somefile", text: "Hey look, some text."
+              stash name: "first-stash", includes: "output/*"  
+
             }
         }
         stage("Compile") {
