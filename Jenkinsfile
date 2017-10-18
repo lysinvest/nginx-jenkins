@@ -17,10 +17,15 @@ pipeline {
             }
         }
         stage('Example 2') {
+
+/*            agent { 
+                label 'registry'
+            }*/
+
             steps {
-              node('registry') {
+/*              node('registry') {*/
                 sh 'cat /etc/hostname'
-              }
+/*              }*/
             }
         }
     }
