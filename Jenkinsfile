@@ -6,7 +6,9 @@ pipeline {
 
             steps {
   node('master') {
-            checkout scm
+    sh 'cat /etc/hostname'
+    sh 'docker --version'
+            
         }
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
