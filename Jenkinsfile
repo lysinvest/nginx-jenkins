@@ -12,6 +12,7 @@ pipeline {
 
     }
     stages {
+        def app
         stage("Checkout") {
             environment { 
                 DEBUG_FLAGS = 'FR'
@@ -54,6 +55,16 @@ pipeline {
 /*                unstash "first-stash"*/
             }
         }
+
+
+        stage('Push image') {
+/*          main-proxy:1.0.0
+          docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
+          }*/
+        }
+
 
         stage('Automated Tests') {
             agent { 

@@ -8,7 +8,7 @@ MAINTAINER Chendra
 RUN rm -v /etc/nginx/nginx.conf
 ADD nginx.conf /etc/nginx/
 COPY index.html /usr/share/nginx/html/index.html
-qsfqs
+
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 EXPOSE 80
 CMD service nginx start
