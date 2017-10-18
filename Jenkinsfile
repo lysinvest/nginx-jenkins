@@ -26,8 +26,9 @@ pipeline {
               submoduleCfg: [], 
               userRemoteConfigs: [[credentialsId: 'lysinvestssh', url: 'git@github.com:lysinvest/nginx-jenkins.git']]])
               sh "ls -a"
-              sh "docker-compose down"
-              sh "docker-compose build"
+/*              sh "docker-compose down"
+              sh "docker-compose build"*/
+              stash name: "first-stash"
             }
         }
 
@@ -38,6 +39,10 @@ pipeline {
             steps {
                 sh 'cat /etc/hostname'
                 sh "ls -a"
+                unstash "first-stash"
+                sh "ls -a"
+                sh "docker-compose build"
+                sh "docker-compose upd -d"
             }
         }
 
