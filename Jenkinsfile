@@ -1,4 +1,4 @@
-node ('master') {
+node ('registry') {
   stage ('provision on master') {
     
     echo 'Checkout source code from github ' + env.BN
