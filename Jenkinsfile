@@ -31,7 +31,7 @@ pipeline {
                 label 'registry'
             }          
             steps {
-                dcho 'Automated Tests'
+                echo 'Automated Tests'
             }
         }
 
