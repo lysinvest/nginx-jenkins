@@ -3,9 +3,10 @@ pipeline {
 /*    parameters {
         string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
     }    */
-    environment { 
+/*    environment { 
         CC = 'clang'
-    }    
+    }    */
+    
     stages {
         stage('compile Unit Test') {
             steps {
