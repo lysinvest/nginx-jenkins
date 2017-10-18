@@ -10,9 +10,10 @@ pipeline {
         stage('compile Unit Test') {
             steps {
               node('master') {
-                sh 'printenv'
+/*                sh 'printenv'*/
                 sh 'cat /etc/hostname'
-/*                echo '${params.Greeting} World!' */
+                echo 'CC'
+                echo CC
               }
             }
         }
