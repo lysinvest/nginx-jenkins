@@ -30,5 +30,20 @@ pipeline {
                 }
             }
         }
+        stage("build2") {
+            agent { 
+                label 'master'
+            }          
+            steps {
+                sh 'cat /etc/hostname'
+                script {
+/*                    build(job: "builder-job",
+                        parameters:
+                        [string(name: 'Nodes', value: "${params.Nodes}"),
+                        string(name: 'Versions', value: "${params.Versions}"),
+                        string(name: 'Path', value: "${params.Path}")])*/
+                }
+            }
+        }
     }
 }
