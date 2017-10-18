@@ -1,11 +1,12 @@
 pipeline {
     agent any
+    parameters {
+        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
+    }    
     stages {
         stage('compile Unit Test') {
             steps {
               node('master') {
-                def username = 'Jenkins'
-                echo "Compile Mr. ${username}"
                 sh 'cat /etc/hostname'
               }
             }
