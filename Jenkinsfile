@@ -27,16 +27,12 @@ pipeline {
         }
 
         stage('Automated Tests') {
-          parallel linux: {
-            node('master') {
-              echo 'aaaaaaaaaaaaaa - master'
+            agent { 
+                label 'registry'
+            }          
+            steps {
+                dcho 'Automated Tests'
             }
-          },
-          windows: {
-            node('registry') {
-              echo 'aaaaaaaaaaaaaa - registry'
-            }
-          }
         }
 
 
