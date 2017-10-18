@@ -8,6 +8,7 @@ pipeline {
             steps {
               node('master') {
                 sh 'cat /etc/hostname'
+                echo '${params.Greeting} World!'
               }
             }
         }
