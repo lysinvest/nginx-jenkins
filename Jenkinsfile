@@ -12,7 +12,7 @@ pipeline {
               node('master') {
 /*                sh 'printenv'*/
                 sh 'cat /etc/hostname'
-                echo 'CC :  ${env.CC}'
+                echo "Running ${env.CC}"
               }
             }
         }
