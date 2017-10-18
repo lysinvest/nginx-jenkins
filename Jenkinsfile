@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Example 2') {
             steps {
-              node('master') {
+              node('registry') {
                 sh 'cat /etc/hostname'
                 sh 'docker --version'
               }
