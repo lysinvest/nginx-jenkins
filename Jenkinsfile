@@ -16,7 +16,14 @@ node ('registry') {
     }
 
     stage('Push image') {
-          docker.withRegistry('https://registry.hub.docker.com', 'dockerhub');
+        try {
+            sh "docker stop main-proxy:1.0.0"
+            sh "docker rm main-proxy:1.0.0"
+        } catch (Exception _) {
+            echo "no container to stop"
+        }
+        sh "docker-compose up -d"
+/*          docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {*/
 /*        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
