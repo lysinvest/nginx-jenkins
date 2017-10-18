@@ -7,6 +7,8 @@ node ('registry') {
     sh 'docker --version'
     sh 'docker-compose --version'
     sh 'ls -a'
+    sh 'docker-compose down'
+    sh 'docker-compose build'
     sh 'docker-compose up -d'
   }
 }
