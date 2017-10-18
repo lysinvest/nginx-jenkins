@@ -7,7 +7,6 @@ pipeline {
           projectStartDate : '2017-02-09', 
           versionPrefix : 'v1.'
         ])
-        LYSINVEST = credentials('lysinvestssh')
     }
 
     stages {
@@ -27,6 +26,9 @@ pipeline {
               submoduleCfg: [], 
               userRemoteConfigs: [[credentialsId: 'lysinvestssh', url: 'git@github.com:lysinvest/nginx-jenkins.git']]])
               sh "ls -a"
+              sh "docker-compose down"
+              sh "docker rmi main-proxy:1.0.0"
+              sh "docker-compose build"
             }
         }
 
