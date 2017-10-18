@@ -1,7 +1,7 @@
 pipeline {
     agent none
     stages {
-        stage('Build') {
+        stage('Test on any') {
             agent any
             steps {
                 sh 'sudo cat /etc/hostname'
