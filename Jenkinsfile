@@ -4,5 +4,6 @@ node ('master') {
     sh 'cat /etc/hostname'
     sh 'docker --version'
     sh 'docker-compose --version'
+    sh 'ls -a'
   }
 }
