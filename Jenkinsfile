@@ -12,8 +12,7 @@ pipeline {
               node('master') {
 /*                sh 'printenv'*/
                 sh 'cat /etc/hostname'
-                echo 'CC'
-                echo CC
+                echo 'CC : ' . CC
               }
             }
         }
