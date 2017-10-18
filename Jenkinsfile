@@ -40,12 +40,15 @@ pipeline {
 
             }
         }
+
         stage("Compile") {
             agent { 
                 label 'registry'
             }          
             steps {
                 sh 'cat /etc/hostname'
+                sh "ls -a"
+                unstash "first-stash"
             }
         }
 
