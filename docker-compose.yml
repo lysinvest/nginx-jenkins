@@ -10,6 +10,8 @@ services:
     networks:
       - frontend
     restart: always
+#    environment:
+#      - DEBUG=1
 
 networks:
   frontend:
