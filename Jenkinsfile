@@ -40,8 +40,12 @@ pipeline {
                 sh 'cat /etc/hostname'
                 unstash "first-stash"
 /*                sh "docker-compose  -f docker-compose.yml up -d" */
-                sh 'docker rm main-proxy -f'
-                sh 'docker-compose up -d'
+                try {
+                    sh 'docker rm main-proxy -f'
+                }
+                finally {
+                    sh 'docker-compose up -d'
+                }
 /*                sh "docker-compose stop"
                 sh "docker-compose down"
                 sh "docker-compose up -d"*/
