@@ -1,6 +1,6 @@
 pipeline {
     agent any
-        parameters {
+/*        parameters {
             choice(
                 name: 'Nodes',
                 choices:"Linux\nMac",
@@ -13,7 +13,7 @@ pipeline {
                 name: 'Path',
                 defaultValue:"/home/pencillr/builds/",
                 description: "Where to put the build!")
-    }
+    }*/
     stages {
         stage("build") {
             steps {
