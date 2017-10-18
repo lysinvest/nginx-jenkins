@@ -1,6 +1,3 @@
-pipeline {
-    agent any
-    stages {
 node ('registry') {
   stage ('provision on master') {
     
@@ -14,10 +11,4 @@ node ('registry') {
     sh 'docker-compose build'
     sh 'docker-compose up -d'
   }
-} 
- 
- 
-    }
 }
-
-
