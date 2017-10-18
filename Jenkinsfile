@@ -20,9 +20,16 @@ pipeline {
                 label 'master'
             }          
             steps {
-                checkout scm
+/*                checkout scm
                 echo "Language . ${env.CC} . ${env.DEBUG_FLAGS}"
-                sh 'cat /etc/hostname'
+                sh 'cat /etc/hostname'*/
+
+
+              echo 'Checkout source code from github ' + env.BN
+
+
+
+
             }
         }
         stage("Compile") {
