@@ -20,6 +20,7 @@ pipeline {
                 label 'master'
             }          
             steps {
+                sh 'cat /etc/hostname'
                 script {
 /*                    build(job: "builder-job",
                         parameters:
