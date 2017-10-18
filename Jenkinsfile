@@ -5,11 +5,15 @@ pipeline {
     }
     stages {
         stage("Checkout") {
+            environment { 
+                DEBUG_FLAGS = '-g'
+            }            
             agent { 
                 label 'master'
             }          
             steps {
                 checkout scm
+                echo "I said, Hello Mr. ${env.CC}"
                 sh 'cat /etc/hostname'
             }
         }
