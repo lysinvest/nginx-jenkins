@@ -1,16 +1,20 @@
 pipeline {
     agent any
     stages {
-        stage('Example') {
-
-
+        stage('Example 1') {
             steps {
-  node('master') {
-    sh 'cat /etc/hostname'
-    sh 'docker --version'
-            
+              node('master') {
+                sh 'cat /etc/hostname'
+                sh 'docker --version'
+              }
+            }
         }
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+        stage('Example 2') {
+            steps {
+              node('master') {
+                sh 'cat /etc/hostname'
+                sh 'docker --version'
+              }
             }
         }
     }
