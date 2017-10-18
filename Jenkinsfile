@@ -1,19 +1,11 @@
 pipeline {
-    agent any
+ agent {
+        docker { image 'node:7-alpine' }
+    }
     stages {
-        stage('nginx-jenkins Build') {
+        stage('Test') {
             steps {
-                echo 'nginx-jenkins Building..'
-            }
-        }
-        stage('nginx-jenkins Test') {
-            steps {
-                echo 'nginx-jenkins Testing..'
-            }
-        }
-        stage('nginx-jenkins Deploy') {
-            steps {
-                echo 'nginx-jenkins Deploying....'
+                sh 'node --version'
             }
         }
     }
