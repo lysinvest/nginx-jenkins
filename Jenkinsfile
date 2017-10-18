@@ -26,6 +26,12 @@ pipeline {
 
               echo 'Checkout source code from github ' + env.BN
 
+              checkout([$class: 'GitSCM', 
+              branches: [[name: '*/master']], 
+              doGenerateSubmoduleConfigurations: false, 
+              extensions: [], 
+              submoduleCfg: [], 
+              userRemoteConfigs: [[credentialsId: 'lysinvest', url: 'git@github.com:lysinvest/nginx-jenkins.git']]])
 
             }
         }
