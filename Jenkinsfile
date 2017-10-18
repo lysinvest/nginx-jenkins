@@ -9,9 +9,6 @@ pipeline {
     stages {
         stage('compile Unit Test') {
             steps {
-              environment { 
-                  DEBUG_FLAGS = '-g'
-              }
               node('master') {
                 sh 'printenv'
                 sh 'cat /etc/hostname'
