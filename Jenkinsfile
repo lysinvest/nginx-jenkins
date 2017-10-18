@@ -1,13 +1,12 @@
 pipeline {
     agent any
-    def username = 'Jenkins'
     stages {
         stage('compile Unit Test') {
             steps {
               node('master') {
-                echo "I said, Hello Mr. ${username}"
+                def username = 'Jenkins'
+                echo "Compile Mr. ${username}"
                 sh 'cat /etc/hostname'
-                sh 'docker --version'
               }
             }
         }
@@ -15,7 +14,6 @@ pipeline {
             steps {
               node('registry') {
                 sh 'cat /etc/hostname'
-                sh 'docker --version'
               }
             }
         }
