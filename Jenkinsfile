@@ -16,6 +16,9 @@ pipeline {
     }*/
     stages {
         stage("build") {
+            agent { 
+                label 'master'
+            }          
             steps {
                 script {
 /*                    build(job: "builder-job",
