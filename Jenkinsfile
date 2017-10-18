@@ -18,11 +18,11 @@ pipeline {
         stage("build") {
             steps {
                 script {
-                    build(job: "builder-job",
+/*                    build(job: "builder-job",
                         parameters:
                         [string(name: 'Nodes', value: "${params.Nodes}"),
                         string(name: 'Versions', value: "${params.Versions}"),
-                        string(name: 'Path', value: "${params.Path}")])
+                        string(name: 'Path', value: "${params.Path}")])*/
                 }
             }
         }
