@@ -40,7 +40,7 @@ pipeline {
                 sh 'cat /etc/hostname'
                 unstash "first-stash"
                 sh "docker-compose stop"
-                sh "docker-compose build"
+                sh "docker-compose down"
                 sh "docker-compose up -d"
             }
         }
