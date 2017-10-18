@@ -42,7 +42,7 @@ pipeline {
                 unstash "first-stash"
                 sh "ls -a"
                 sh "docker-compose build"
-                sh "docker-compose upd -d"
+                sh "docker-compose up -d"
             }
         }
 
