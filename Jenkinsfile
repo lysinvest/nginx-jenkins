@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test with master') {
             agent { 
-                label 'registry'
+                label 'master'
             }
             steps {
                 sh 'sudo cat /etc/hostname'
@@ -11,8 +11,6 @@ pipeline {
                 sh 'ls -a'
             }
         }
-    }
-    stages {
         stage('Test with registry') {
             agent { 
                 label 'registry'
