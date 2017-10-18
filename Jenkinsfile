@@ -1,7 +1,7 @@
 pipeline {
-    def app
     agent any
     environment { 
+        def app
         CC = 'lang'
         BN = VersionNumber([
           versionNumberString : '${BUILD_MONTH}.${BUILDS_TODAY}.${BUILD_NUMBER}', 
