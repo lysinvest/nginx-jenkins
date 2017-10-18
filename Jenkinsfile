@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Test master') {
+        stage('Test with master') {
             agent { 
                 label 'registry'
             }
@@ -13,7 +13,7 @@ pipeline {
         }
     }
     stages {
-        stage('Test registry') {
+        stage('Test with registry') {
             agent { 
                 label 'registry'
             }
