@@ -12,7 +12,6 @@ pipeline {
 
     }
     stages {
-        def app
         stage("Checkout") {
             environment { 
                 DEBUG_FLAGS = 'FR'
