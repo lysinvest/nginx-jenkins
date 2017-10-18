@@ -1,19 +1,19 @@
 pipeline {
     agent any
     environment { 
-        CC = 'clang'
+        CC = 'lang'
     }
     stages {
         stage("Checkout") {
             environment { 
-                DEBUG_FLAGS = '-g'
+                DEBUG_FLAGS = 'FR'
             }            
             agent { 
                 label 'master'
             }          
             steps {
                 checkout scm
-                echo "I said, Hello Mr. ${env.CC}"
+                echo "Language . ${env.CC} . ${env.DEBUG_FLAGS}"
                 sh 'cat /etc/hostname'
             }
         }
