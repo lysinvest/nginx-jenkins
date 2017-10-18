@@ -24,10 +24,7 @@ pipeline {
                 echo "Language . ${env.CC} . ${env.DEBUG_FLAGS}"
                 sh 'cat /etc/hostname'*/
 
-
               echo 'Checkout source code from github ' + env.BN
-
-
 
 
             }
