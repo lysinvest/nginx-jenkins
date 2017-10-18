@@ -5,6 +5,7 @@ node ('registry') {
 
     stage('Clone repository') {
         checkout scm
+        stash name: "first-stash"
     }
 
     stage('Build image') {
@@ -22,6 +23,7 @@ node ('registry') {
 node ('registry') {    
 
     stage('Push image') {
+        unstash "first-stash"
         try {
             sh "docker stop main-proxy:1.0.0"
             sh "docker rm main-proxy:1.0.0"
@@ -30,4 +32,5 @@ node ('registry') {
         }
         sh "docker-compose up -d"
     }
+
 }
