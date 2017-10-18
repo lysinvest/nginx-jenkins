@@ -4,7 +4,9 @@ pipeline {
         stage('Build') {
             agent any
             steps {
-                echo '11'
+                sh 'sudo cat /etc/hostname'
+                sh 'docker --version'
+                sh 'ls -a'
             }
         }
         stage('Test on Linux') {
@@ -12,7 +14,9 @@ pipeline {
                 label 'registry'
             }
             steps {
-                echo '22'
+                sh 'sudo cat /etc/hostname'
+                sh 'docker --version'
+                sh 'ls -a'
             }
         }
     }
