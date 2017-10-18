@@ -1,0 +1,22 @@
+
+def buildVersion = null
+def short_commit = null
+echo "Building ${env.BRANCH_NAME}"
+
+stage ('Build') {
+	steps {
+        node('master') {
+            sh 'cat /etc/hostname'
+		    sh 'docker --version'
+        }
+    }
+}
+
+
+
+  node('master') {
+    sh 'docker --version'
+  }
+
+
+

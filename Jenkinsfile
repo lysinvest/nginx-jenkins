@@ -1,27 +1,8 @@
-pipeline {
-    agent any
-/*    parameters {
-        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
-    }    */
-/*    environment { 
-        CC = 'clang'
-    }    */
-    stages {
-        stage('compile Unit Test') {
-            steps {
-              node('master') {
-/*                sh 'printenv'*/
-                sh 'cat /etc/hostname'
-/*                echo "Running ${env.CC}"*/
-              }
-            }
-        }
-        stage('Example 2') {
-            steps {
-              node('registry') {
-                sh 'cat /etc/hostname'
-              }
-            }
-        }
-    }
+node ('master') {
+  stage ('provision on master') {
+    echo 'Checkout source code from github ' + env.BN
+    sh 'cat /etc/hostname'
+    sh 'docker --version'
+    sh 'docker-compose --version'
+  }
 }
