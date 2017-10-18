@@ -41,6 +41,7 @@ pipeline {
                 sh "ls -a"
                 unstash "first-stash"
                 sh "ls -a"
+                sh "docker-compose down"
                 sh "docker-compose build"
                 sh "docker-compose up -d"
             }
@@ -56,4 +57,5 @@ pipeline {
         }
 
     }
+    
 }
