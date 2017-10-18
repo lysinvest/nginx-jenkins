@@ -1,12 +1,21 @@
 pipeline {
-    agent { label 'master' }    
+    agent none
     stages {
-        stage('Test') {
+        stage('Build') {
+            agent any
             steps {
-                sh 'sudo cat /etc/hostname'
-                sh 'docker --version'
-                sh 'ls -a'
+                echo '11'
+            }
+        }
+        stage('Test on Linux') {
+            agent { 
+                label 'registry'
+            }
+            steps {
+                echo '22'
             }
         }
     }
 }
+
+
